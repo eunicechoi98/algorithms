@@ -1,0 +1,25 @@
+IP = HR(P)
+E = 10^(m-1) mod q
+X = HR(T[1..m])
+for i = 0.. ((n-m)-1):
+  if IP == X:
+    match = true
+    for j = 1..m:
+      if P[j] != T[i+j]:
+        match = false
+        break
+    if match:
+      print "match found at shift" , i
+      
+    X = (((X-f(T[i+1])*E mod q)*10) mod q + f(T[i+m+1])) mod q
+    
+ if IP == X:
+  match = True
+  for j = 1..m:
+    if P[j] != T[n-m+j]:
+      match = false
+      break
+   if match:
+    print "match found at shift", (n-m)
+    
+  
